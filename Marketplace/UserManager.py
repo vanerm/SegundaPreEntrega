@@ -1,6 +1,6 @@
 from Marketplace.User import User
-# UserManager.py
 
+# UserManager.py
 # Clase que administra a los usuarios: registro, login y listado
 class UserManager:
     def __init__(self):

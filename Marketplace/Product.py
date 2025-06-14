@@ -1,3 +1,5 @@
+# Esta clase representa un producto en un marketplace. 
+# Permite crear un producto con nombre, precio y stock.
 class Product:
     def __init__(self, name, price, stock):
         self.name = name

@@ -1,3 +1,5 @@
+# Esta clase representa una compra realizada por un usuario.
+# Permite crear un ticket de compra con el ID, nombre del usuario, DNI, total y los productos comprados.
 class Purchase:
     def __init__(self,id,user_name,user_dni,total,cart_items):
         self.id = id
@@ -15,5 +17,5 @@ class Purchase:
         print(f"\nTOTAL: ${self.total}")
         print("\nStock actualizado:")
         for product, _ in self.cart_items:
-            print(f"{product.name}: {product.stock} units")
+            print(f"{product.name}: {product.stock} unidades")
         print("----------------------")

@@ -1,15 +1,11 @@
-from Marketplace.UserManager import UserManager
-from Marketplace.User import User
 from Marketplace.Product import Product
-from Marketplace.Purchase import Purchase
+from Marketplace.UserManager import UserManager
 from Marketplace.PurchaseManager import PurchaseManager
 
 # main.py --- Sistema de gestión de usuarios con login y registro
 # Este script es el punto de entrada del sistema de gestión de usuarios y compras.
 # Permite registrar e iniciar sesión con hasta 3 intentos, y realizar compras desde un submenú.
-# La clase MainApp controla el flujo principal, usando clases modulares como User, UserManager, Product, Purchase y PurchaseManager.
-# El sistema es extensible, modular y fácil de usar como aplicación independiente.
-# El código está diseñado para ser ejecutado directamente, iniciando la aplicación y mostrando el menú principal.
+# La clase MainApp controla el flujo principal, usando clases modulares como UserManager, Product, Purchase y PurchaseManager.
 
 # Clase principal que ejecuta el sistema y contiene el menú
 class MainApp:
