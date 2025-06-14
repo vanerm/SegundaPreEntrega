@@ -1,5 +1,5 @@
 import random
-from Marketplace.Purchase import Purchase
+from Marketplace.Purchase.Purchase import Purchase
 
 # User.py --- Clase que representa un usuario
 # Esta clase permite crear un usuario con nombre, dni, teléfono y contraseña.

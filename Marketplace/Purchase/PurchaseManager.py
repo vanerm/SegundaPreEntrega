@@ -1,4 +1,4 @@
-from Marketplace.User import User
+from Marketplace.User.User import User
 
 # PurchaseManager.py --- Clase que gestiona las compras de los usuarios
 class PurchaseManager:

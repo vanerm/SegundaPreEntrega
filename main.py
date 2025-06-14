@@ -1,6 +1,6 @@
-from Marketplace.Product import Product
-from Marketplace.UserManager import UserManager
-from Marketplace.PurchaseManager import PurchaseManager
+from Marketplace.Product.Product import Product
+from Marketplace.User.UserManager import UserManager
+from Marketplace.Purchase.PurchaseManager import PurchaseManager
 
 # main.py --- Sistema de gestión de usuarios con login y registro
 # Este script es el punto de entrada del sistema de gestión de usuarios y compras.

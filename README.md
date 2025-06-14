@@ -23,17 +23,22 @@ Este proyecto fue desarrollado como parte de la materia de Python de la [Diploma
 
 El proyecto está organizado en módulos para facilitar su mantenimiento y escalabilidad:
 
-```
 SegundaPreEntrega/
 ├── main.py
 ├── Marketplace/
 │   ├── __init__.py
-│   ├── Product.py
-│   ├── Purchase.py
-│   ├── PurchaseManager.py
-│   ├── User.py
-│   ├── UserManager.py
-│   └── __pycache__/
+│   ├── usuario/
+│   │   ├── __init__.py
+│   │   ├── User.py
+│   │   └── UserManager.py
+│   ├── producto/
+│   │   ├── __init__.py
+│   │   └── Product.py
+│   ├── compra/
+│   │   ├── __init__.py
+│   │   ├── Purchase.py
+│   │   └── PurchaseManager.py
+
 ```
 
 - **`main.py`**: Punto de entrada del sistema. Controla el flujo principal de la aplicación.
