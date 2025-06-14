@@ -42,7 +42,7 @@ class User:
         new_purchase = Purchase(                      # genera una compra
             id=purchase_id,
             user_name=self.name,
-            user_dni=self.dni,                            # Se ha descomentado la línea anterior
+            user_dni=self.dni,                            
             total=total,
             cart_items=self.cart.copy()
         )

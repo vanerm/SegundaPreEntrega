@@ -7,7 +7,7 @@ class UserManager:
         # Lista de usuarios
         self.users = []
 
-    # Función que solicita los datos (nombre y pass) para ingresar por teclado por el usuario
+    # Función que solicita los datos (nombre, dni y pass) para ingresar por teclado por el usuario
     def input_data(self):
         name = input("Ingrese su nombre de usuario: ")
         dni = input("Ingrese su DNI: ")
