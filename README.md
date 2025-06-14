@@ -1,6 +1,6 @@
 # Sistema de Gestión de Usuarios y Compras
 
-Este proyecto fue desarrollado como parte de la materia de Python de la Diplomatura de Data Science en Coder House. Es una aplicación modular que permite gestionar usuarios, realizar compras y administrar productos. El sistema está diseñado para ser extensible, fácil de usar y ejecutable como una aplicación independiente.
+Este proyecto fue desarrollado como parte de la materia de Python de la [Diplomatura de Data Science en Coder House](https://www.coderhouse.com/ar/diplomaturas/data/). Es una aplicación modular que permite gestionar usuarios, realizar compras y administrar productos. El sistema está diseñado para ser extensible, fácil de usar y ejecutable como una aplicación independiente.
 
 ## Funcionalidades
 
@@ -65,4 +65,4 @@ Tras un inicio de sesión exitoso, se accede al menú de compras, donde se puede
 
 ## Créditos
 
-Este proyecto fue desarrollado como parte de la Diplomatura de Data Science en Coder House.
+Este proyecto fue desarrollado como parte de la [Diplomatura de Data Science en Coder House](https://www.coderhouse.com/ar/diplomaturas/data/).
