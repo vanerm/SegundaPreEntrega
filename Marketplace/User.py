@@ -18,7 +18,7 @@ class User:
         return f"User: {self.name} | DNI: {self.dni} | Purchases: {len(self.purchase_history)}"
 
     def add_product(self, product, quantity=1):
-        if product.check_stock() and product.sell(quantity):
+        if product.sell(quantity):
             self.cart.append((product, quantity))     # verifica stock, descuenta y lo agrega al carrito
             return True
         return False

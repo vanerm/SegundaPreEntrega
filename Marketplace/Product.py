@@ -4,6 +4,9 @@ class Product:
         self.price = price
         self.stock = stock
 
+    def __str__(self):
+        return f"{self.name} - ${self.price} (Stock: {self.stock})"
+    
     def check_stock(self, quantity=1):
         return self.stock >= quantity         # retorna True si hay suficiente stock
 
