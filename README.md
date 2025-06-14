@@ -43,11 +43,11 @@ SegundaPreEntrega/
 ```
 
 - **`main.py`**: Punto de entrada del sistema. Controla el flujo principal de la aplicación.
-- **`Marketplace/Product.py`**: Clase que representa un producto con atributos como nombre, precio y stock.
-- **`Marketplace/Purchase.py`**: Clase que gestiona las compras y genera recibos.
-- **`Marketplace/PurchaseManager.py`**: Clase que administra el proceso de compra.
-- **`Marketplace/User.py`**: Clase que representa un usuario con carrito y historial de compras.
-- **`Marketplace/UserManager.py`**: Clase que administra el registro, login y listado de usuarios.
+- **`Marketplace/Product/Product.py`**: Clase que representa un producto con atributos como nombre, precio y stock.
+- **`Marketplace/Purchase/Purchase.py`**: Clase que gestiona las compras y genera recibos.
+- **`Marketplace/Purchase/PurchaseManager.py`**: Clase que administra el proceso de compra.
+- **`Marketplace/User/User.py`**: Clase que representa un usuario con carrito y historial de compras.
+- **`Marketplace/User/UserManager.py`**: Clase que administra el registro, login y listado de usuarios.
 
 ## Cómo Ejecutar el Proyecto
 
