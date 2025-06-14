@@ -1,5 +1,6 @@
 from Marketplace.UserManager import UserManager
 from Marketplace.User import User
+from Marketplace.Product import Product
 
 # main.py --- Sistema de gestión de usuarios con login y registro
 # Este script implementa un sistema de gestión de usuarios que permite el registro, login y listado de usuarios.
@@ -7,10 +8,16 @@ from Marketplace.User import User
 # Importación de las clases User y UserManager
 
 # Clase principal que ejecuta el sistema y contiene el menú
-class App:
+class MainApp:
     def __init__(self):
         self.manager = UserManager()
         self.intentos = 0
+        # Lista fija de productos disponibles en el sistema
+        self.products = [
+            Product("Manzanas", 1000, 10),
+            Product("Peras", 2000, 5),
+            Product("Naranjas", 3000, 20)
+        ]
 
     # Menú principal
     def run(self):
@@ -24,8 +31,10 @@ class App:
 
             # Opción 1: Login
             if opcion == 1:
-                if self.manager.login():
-                    break  # Login exitoso, salir del sistema
+                user = self.manager.login()
+                if user:  # Login exitoso
+                    self.menu_compra(user)  # Llama al submenú de compra
+                    break
                 else:
                     self.intentos += 1
                     print(f"\nIntento fallido. Intentos restantes: {3 - self.intentos}")
@@ -66,7 +75,59 @@ class App:
         print("Demasiados intentos fallidos".center(30))
         print("!"*30)
 
+    # Submenú de compra luego del login exitoso
+    def menu_compra(self, user):
+        while True:
+            print("\n" + "-"*30)
+            print("MENÚ DE COMPRA".center(30))
+            print("-"*30)
+            print("(1) Ver productos")
+            print("(2) Agregar producto al carrito")
+            print("(3) Finalizar compra")
+            print("(4) Cerrar sesión")
+
+            opcion = input("Seleccione una opción: ")
+
+            if opcion == "1":
+                print("\nProductos disponibles:")
+                for idx, prod in enumerate(self.products, 1):
+                    print(f"{idx}. {prod.name} - ${prod.price} (Stock: {prod.stock})")
+
+            elif opcion == "2":
+                try:
+                    idx = int(input("Ingrese número de producto: ")) - 1
+                    cantidad = int(input("Ingrese cantidad: "))
+                    if 0 <= idx < len(self.products):
+                        prod = self.products[idx]
+                        if user.add_product(prod, cantidad):
+                            print(f"{prod.name} agregado al carrito")
+                        else:
+                            print(f"No se pudo agregar {prod.name} al carrito")
+                    else:
+                        print("Producto inválido")
+                except ValueError:
+                    print("Entrada inválida")
+
+            elif opcion == "3":
+                purchase = user.finalize_purchase()
+                if purchase:
+                    purchase.generate_receipt()
+                else:
+                    print("El carrito está vacío")
+
+            elif opcion == "4":
+                print("Sesión cerrada.")
+                break
+
+            else:
+                print("Opción inválida")
 
 if __name__ == "__main__":
-    app = App()
+    app = MainApp()
     app.run()
+
+# Este script es el punto de entrada del sistema de gestión de usuarios y compras.
+# Permite registrar e iniciar sesión con hasta 3 intentos, y realizar compras desde un submenú.
+# La clase App controla el flujo principal, usando clases modulares como User, UserManager, Product y Purchase.
+# El sistema es extensible, modular y fácil de usar como aplicación independiente.
+# El código está diseñado para ser ejecutado directamente, iniciando la aplicación y mostrando el menú principal.
