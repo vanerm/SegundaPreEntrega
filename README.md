@@ -23,6 +23,7 @@ Este proyecto fue desarrollado como parte de la materia de Python de la [Diploma
 
 El proyecto está organizado en módulos para facilitar su mantenimiento y escalabilidad:
 
+```
 SegundaPreEntrega/
 ├── main.py
 ├── Marketplace/
