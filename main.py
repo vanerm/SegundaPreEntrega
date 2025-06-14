@@ -14,7 +14,7 @@ from Marketplace.PurchaseManager import PurchaseManager
 # Clase principal que ejecuta el sistema y contiene el menú
 class MainApp:
     def __init__(self):
-        self.manager = UserManager()
+        self.user_manager = UserManager()
         self.intentos = 0
         # Lista fija de productos disponibles en el sistema
         self.products = [
@@ -22,7 +22,7 @@ class MainApp:
             Product("Peras", 2000, 5),
             Product("Naranjas", 3000, 20)
         ]
-        self.purchase_manager = PurchaseManager(self.manager, self.products)
+        self.purchase_manager = PurchaseManager(self.user_manager, self.products)
 
     # Menú principal
     def run(self):
@@ -36,7 +36,7 @@ class MainApp:
 
             # Opción 1: Login
             if opcion == 1:
-                user = self.manager.login()
+                user = self.user_manager.login()
                 if user:  # Login exitoso
                     self.purchase_manager.purchase_menu(user)  # Llama al submenú de compra de PurchaseManager
                     break
@@ -46,7 +46,7 @@ class MainApp:
 
             # Opción 2: Registro
             elif opcion == 2:
-                if not self.manager.sign_up():
+                if not self.user_manager.sign_up():
                     self.intentos += 1
                     print(f"\nIntento fallido. Intentos restantes: {3 - self.intentos}")
 
@@ -62,7 +62,7 @@ class MainApp:
 
         # Mostrar estado final
         print("\nEstado final del sistema:")
-        self.manager.show_users()
+        self.user_manager.show_users()
 
     def menu(self):
         while True:
