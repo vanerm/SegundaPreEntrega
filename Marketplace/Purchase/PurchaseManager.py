@@ -19,11 +19,13 @@ class PurchaseManager:
 
             opcion = input("Seleccione una opción: ")
 
+            # Lista los productos disponibles, precio y stock
             if opcion == "1":
                 print("\nProductos disponibles:")
                 for idx, prod in enumerate(self.products, 1):
                     print(f"{idx}. {prod.name} - ${prod.price} (Stock: {prod.stock})")
 
+            # Agrega un producto al carrito del usuario
             elif opcion == "2":
                 try:
                     idx = int(input("Ingrese número de producto: ")) - 1
@@ -31,14 +33,15 @@ class PurchaseManager:
                     if 0 <= idx < len(self.products):
                         prod = self.products[idx]
                         if user.add_product(prod, cantidad):
-                            print(f"{prod.name} agregado al carrito")
+                            print(f"{prod.name} agregado al carrito") # Si se pudo agregar al carrito, muestra un mensaje de éxito
                         else:
-                            print(f"No se pudo agregar {prod.name} al carrito")
+                            print(f"No se pudo agregar {prod.name} al carrito") # Si no se pudo agregar por stock insuficiente, muestra un mensaje de error
                     else:
                         print("Producto inválido")
                 except ValueError:
                     print("Entrada inválida")
 
+            # Finaliza la compra, genera un ticket y actualiza el stock
             elif opcion == "3":
                 purchase = user.finalize_purchase()
                 if purchase:
@@ -46,6 +49,7 @@ class PurchaseManager:
                 else:
                     print("El carrito está vacío")
 
+            # Cierra la sesión del usuario.
             elif opcion == "4":
                 print("Sesión cerrada.")
                 break

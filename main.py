@@ -60,6 +60,7 @@ class MainApp:
         print("\nEstado final del sistema:")
         self.user_manager.show_users()
 
+    # Menú de opciones
     def menu(self):
         while True:
             try:
@@ -70,12 +71,14 @@ class MainApp:
             except ValueError:
                 print("Error: Debe ingresar un número")
 
+    # Mensaje de bloqueo por demasiados intentos fallidos
     def bloqueo(self):
         print("\n" + "!"*30)
         print("CUENTA BLOQUEADA".center(30))
         print("Demasiados intentos fallidos".center(30))
         print("!"*30)
 
+# Punto de entrada del script
 if __name__ == "__main__":
     app = MainApp()
     app.run()
