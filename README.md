@@ -28,14 +28,14 @@ SegundaPreEntrega/
 ├── main.py
 ├── Marketplace/
 │   ├── __init__.py
-│   ├── usuario/
+│   ├── User/
 │   │   ├── __init__.py
 │   │   ├── User.py
 │   │   └── UserManager.py
-│   ├── producto/
+│   ├── Product/
 │   │   ├── __init__.py
 │   │   └── Product.py
-│   ├── compra/
+│   ├── Purchase/
 │   │   ├── __init__.py
 │   │   ├── Purchase.py
 │   │   └── PurchaseManager.py
